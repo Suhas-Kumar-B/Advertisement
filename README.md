@@ -1,5 +1,5 @@
 # Advertisement
-Small advertisement webpage using html and css only
+Small advertisement webpage using html and css only.
 I have created this only for practice and it may be worse as it's one of my first project.
 Hope whoever see's this just make sure to read the code properly to suit your taste.
 #Main Coding Part
