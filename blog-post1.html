@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    header {
+      /*background-color: #c1c8c8; */
+      color: #000000;
+      padding: 10px 0;
+      text-align: center;
+      border-radius: 35px;
+  }
+  nav {
+    background-color: rgb(197, 245, 247);
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  nav li {
+    position: relative;
+  }
+  nav a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+  }
+  nav a:hover {
+    background-color: #f4f4f4;
+    border-radius: 30px;
+  }
+  nav a.active,
+  nav a:focus,
+  nav a:hover {
+    color: #000000;
+    background-color: #c1c8c8;
+    border-radius: 20px;
+    transition: 0.5s background-color;
+  }
+  
+  nav a.active {
+    font-weight: bold;
+  }
+  
+  /* Animation */
+  nav a {
+    position: relative;
+  }
+  nav a.active:before,
+  nav a:focus:before,
+  nav a:hover {
+    transform: scaleX(1.2);
+  } 
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#blog">Blog</a></li>
+  </ul>
+</nav>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aperiam expedita nisi iste modi molestiae voluptas quas, harum ipsum blanditiis facere dignissimos quaerat sapiente quasi quibusdam velit dolorem autem iusto.
+</body>
+</html>

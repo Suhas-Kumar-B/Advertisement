@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Advertisement</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      :root {
+        --main-color: #3867d6;
+    }
+    * {
+        font-family: Arial, sans-serif; /* Changed font to Arial */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: all .2s linear;
+    }
+    html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 16rem;
+        scroll-behavior: smooth;
+    }
+    html::-webkit-scrollbar {
+        width: 1rem;
+    }
+    html::-webkit-scrollbar-track {
+        background: #444;
+    }
+    html::-webkit-scrollbar-thumb {
+        background: #3867d6;
+        border-radius: 5rem;
+    }
+    body {
+        background: #fff;
+        font-size: 1.6rem; /* Adjust font size */
+        text-align: left; /* Align text to left */
+        line-height: 1.6; /* Set line height for better readability */
+    }
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        background: #333;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 9%; /* Adjust padding */
+    }
+    .header .logo {
+        font-weight: bold; /* Changed to bold */
+        color: #fff;
+        font-size: 2.5rem;
+    }
+    .header .logo span {
+        color: var(--main-color);
+    }
+    .header .navbar a {
+        font-size: 1.6rem; /* Adjust font size */
+        margin-right: 2rem;
+    }
+    .header .navbar a:hover {
+        color: var(--main-color);
+    }
+    #menu-bars {
+        font-size: 2.5rem; /* Adjust font size */
+        color: #fff;
+        cursor: pointer;
+        display: none;
+    }
+    @media (max-width: 768px) {
+        /* Adjustments for smaller screens */
+        html {
+            font-size: 50%;
+        }
+        #menu-bars {
+            display: initial;
+        }
+        .header .navbar {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border-top: .1rem solid #222;
+            background: #333;
+            clip-path: polygon(0 0, 100% 0, 0 0);
+        }
+        .header .navbar.active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .header .navbar a {
+            display: flex;
+            background: #222;
+            border-radius: .5rem;
+            padding: 1.3rem;
+            margin: 1.3em;
+            font-size: 1.5rem;
+        }
+    }
+    .container {
+        text-align: center;
+        padding-top: 6rem;
+        margin: 2rem auto; /* Center the container */
+        max-width: 70rem;
+    }
+    .section {
+        color: #333;
+        margin-bottom: 4rem; /* Add margin to sections */
+        text-align: justify; /* Align text to justify */
+        border: 2px solid #3867d6; /* Add border */
+        padding: 1.5rem; /* Add padding */
+    }
+    .section span {
+        color: #3867d6;
+    }
+    .portfolio-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+  
+  .portfolio-item div {
+      flex-basis: calc(50% - 20px); /* Adjust the width of each item */
+      margin-bottom: 20px;
+  }
+  
+  .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  
+    .contact-form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .contact-left {
+      flex: 1;
+      margin-right: 20px;
+  }
+  
+  .contact-left-title h2 {
+      font-weight: bold;
+      color: aquamarine;
+      font-size: 3.2rem;
+      margin-bottom: 5px;
+  }
+  
+  .contact-left label,
+  .contact-left input,
+  .contact-left textarea,
+  .contact-left button {
+      width: 100%;
+      margin-bottom: 15px;
+  }
+  
+  .contact-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .contact-right img {
+      max-width: 100%;
+      height: auto;
+  }
+  .contact-input-box {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-input-box label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-input-box input,
+.contact-input-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-input-box button {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-input-box button:hover {
+    background-color: #123456;
+}
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .social-icons a {
+        margin: 0 10px;
+    }
+    .social-icons img {
+        height: 30px;
+        width: 30px;
+    }
+      footer .social-icons img:hover {
+          transform: scale(1.2);
+      }
+    </style>
+</head>
+<body>
+    <header class="header">
+      <a href="#" class="logo"><span>lo</span>go</a>
+    
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="#blog">Blog</a>
+    </nav>
+    <div id="menu-bars" class="fas fa-bars"></div>
+  </header>
+    <div class="container">
+        <section id="home" class="section">
+            <h2>Welcome to our <span>Construction Advertisement</span> Website</h2>
+            <p>We specialize in residential and commercial interior design. Explore our services and portfolio below.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore praesentium alias quos perferendis odio consequatur, expedita delectus nobis aut totam autem sunt minus cupiditate earum. Similique harum numquam architecto necessitatibus?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum omnis tempora id nulla illo blanditiis ratione deleniti quas mollitia aliquam adipisci iusto cumque pariatur, beatae voluptatum! Cumque voluptatum eligendi recusandae!necessitatibus?Lorem</p><P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates laboriosam praesentium excepturi nihil dolorum aperiam. Facilis doloribus exercitationem inventore facere deleniti sit, quas sed, blanditiis laboriosam maiores quod officia reiciendis.lorem</P><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus deserunt at eum velit? Facilis voluptatum natus vero magnam nemo similique excepturi dicta consequuntur beatae quidem soluta sunt, fuga rem voluptate.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia necessitatibus cum laboriosam voluptatum iure vel eum minima deleniti eveniet neque dolorem itaque aliquam tempora asperiores nesciunt, cumque rem tenetur consequuntur.</p><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui quae mollitia dolorem odio dicta voluptatem voluptatum expedita ea explicabo consequuntur incidunt, officiis eius delectus quia corporis. Dignissimos voluptate earum animi.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam rerum officia, vel, ipsam quas voluptatum eum suscipit dolorum voluptatem atque sit minus reiciendis sint vero minima soluta ullam aliquid libero.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita, distinctio dolores aperiam tempora reprehenderit qui suscipit nisi totam dignissimos deleniti, magni repudiandae iste voluptate commodi autem error? Reprehenderit, ea?</p>
+        </section>
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>We are a team of experienced professionals passionate about creating stunning interior spaces.</p>
+        </section>
+        <section id="portfolio" class="section">
+          <h2>Portfolio</h2>
+          <div class="portfolio-item">
+              <div>
+                  <img src="residential.webp" alt="Residential">
+                  <p>Residential Project 1</p>
+              </div>
+              <div>
+                  <img src="commercial.webp" alt="Commercial">
+                  <p>Commercial Project 1</p>
+              </div>
+          </div>
+      </section>
+      
+        <section id="contact" class="section">
+          <div class="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                  <div class="contact-left-title">
+                      <h2>Contact Us</h2>
+                      <hr>
+                  </div>
+                  <input type="hidden" name="access_key" value="82037a3f-2e0d-4875-8230-5907de33d10b">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" class="contact-inputs" required><br>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="Your email" class="contact-inputs" required><br>
+                  <label for="message">Message:</label><br>
+                  <textarea id="message" name="message" placeholder="Your message" class="contact-inputs" required></textarea><br>
+                  <button type="submit">Submit <img src="arrow_icon.png" alt=""></button>
+              </form>
+              <div class="contact-right">
+                  <img src="right_img.png" alt="" >
+              </div>
+          </div>
+      </section>
+        <section id="blog" class="section">
+            <h2>Blog</h2>
+            <div class="blog-post">
+                <h3>Top Trends in Interior Design</h3>
+                <p>Stay updated with the latest trends in <span>residential</span> and <span>commercial</span> interior design.</p>
+                <a href="blog-post1.html">Read More</a>
+            </div>
+        </section>
+    </div>
+    <footer>
+      <p>&copy; 2024 Construction Advertisement. All rights reserved.</p>
+      <div class="contact-info">
+          Contact us @+91 7483382331
+      </div>
+      <div class="social-icons">
+          <a href="#" target="_blank"><img src="https://clipartcraft.com/images/instagram-logo-transparent-background-2.png" alt="Instagram"></a>
+          <a href="#" target="_blank"><img src="https://th.bing.com/th/id/OIP.PtjxHgNRRTtw6OsaRub_RgHaHa?w=199&h=199&c=7&r=0&o=5&pid=1.7" alt="Facebook"></a>
+          <a href="#" target="_blank"><img src="https://th.bing.com/th/id/OIP.wNRPbGYgDUjW8Qmr11_5dgHaEa?w=3840&h=2288&rs=1&pid=ImgDetMain" alt="Twitter"></a>
+          <a href="#" target="_blank"><img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG7.png" alt="LinkedIn"></a>
+      </div>
+  </footer>
+  
+</body>
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    const menuBars = document.getElementById("menu-bars");
+    const navbar = document.querySelector(".navbar");
+
+    menuBars.addEventListener("click", function() {
+      navbar.classList.toggle("active");
+    });
+  }); 
+
+</script>
+</html>
